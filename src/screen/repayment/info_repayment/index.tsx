@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useCallback } from "react"
 import { Text, View, TouchableOpacity, Image, useWindowDimensions, ScrollView } from "react-native"
 import { Header } from '../../../components/core'
 import { useNavigation } from "@react-navigation/native"
@@ -15,6 +15,15 @@ export default () => {
         { title: 'Hạn thanh toán ', value: '20/02/2020' },
         { title: 'Đã trả', value: '690,000 VND' },
     ]
+    const _onClickFeature = useCallback((index : number) => {
+        if (index ===0) {
+            navigation.navigate("QR")
+            return 
+        }
+        if (index ===2) {
+            navigation.navigate("ListRepayment")
+        }
+    },[])
     return (
         <View style={{ flex: 1 }}>
             <Header
@@ -41,7 +50,7 @@ export default () => {
             <View style={{ margin: 16, flexDirection: 'row', alignItems: 'center', padding: 16, backgroundColor: 'white', borderRadius: 16 }}>
                 {["Quét Mã", "QR Của Tôi", "Sao Kê"].map((item: string, index: number) => {
                     return (
-                        <TouchableOpacity key={index} style={{ justifyContent: 'center', alignItems: 'center', flex: 1 }}>
+                        <TouchableOpacity onPress={() => _onClickFeature(index)} key={index} style={{ justifyContent: 'center', alignItems: 'center', flex: 1 }}>
                             <Image source={{ uri: 'http://static.sangtacviet.com/img/useravatar/user23690.jpeg' }} style={{ width: 48, height: 48, borderRadius: 8 }} />
                             <Text style={{ textAlign: 'center', fontSize: 12, marginTop: 8 }}>{item}</Text>
                         </TouchableOpacity>
@@ -60,7 +69,7 @@ export default () => {
                 })}
             </View>
 
-            <TouchableOpacity onPress={() => navigation.navigate("ListRepayment")} style={{ height: 48, backgroundColor: '#8E94F2', width: width - 32, justifyContent: 'center', flexDirection: 'row', marginHorizontal: 16, alignItems: 'center', borderRadius: 16, marginTop: 16 }}>
+            <TouchableOpacity  style={{ height: 48, backgroundColor: '#8E94F2', width: width - 32, justifyContent: 'center', flexDirection: 'row', marginHorizontal: 16, alignItems: 'center', borderRadius: 16, marginTop: 16 }}>
                 <Text style={{ color: 'white', fontSize: 16, lineHeight: 20, fontWeight: '600' }}>Trả nợ tiêu dùng</Text>
             </TouchableOpacity>
             </ScrollView>
