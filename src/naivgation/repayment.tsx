@@ -23,7 +23,7 @@ function Screen2 () {
 const Stack = createStackNavigator<any>();
 export default memo(() => {
     return (
-        <NavigationContainer>
+        <NavigationContainer>   
             <Stack.Navigator
                 screenOptions={{
                     headerShown: false,
