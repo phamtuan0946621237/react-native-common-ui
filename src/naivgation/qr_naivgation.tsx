@@ -1,11 +1,11 @@
-import React, { memo } from 'react'
-import { Text,View } from 'react-native'
-import { NavigationContainer, useNavigation } from '@react-navigation/native';
+import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import InfoRepayment from '../screen/repayment/info_repayment'
-import ListRepayment from '../screen/repayment/list_repayment'
+import React from 'react';
+import InfoRepayment from '../screen/repayment/info_repayment';
+import ListRepayment from '../screen/repayment/list_repayment';
+
 const Stack = createStackNavigator<any>();
-export default memo(() => {
+export default () => {
     return (
         <NavigationContainer>   
             <Stack.Navigator
@@ -20,4 +20,4 @@ export default memo(() => {
             </Stack.Navigator>
         </NavigationContainer>
     )
-})
+}
