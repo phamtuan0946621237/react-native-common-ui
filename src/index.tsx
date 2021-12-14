@@ -1,7 +1,7 @@
-import Button from './components/button'
+import CommonUI from './components/naivgation'
 
 export {
-  Button
+  CommonUI
 }
 
 
