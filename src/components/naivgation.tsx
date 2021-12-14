@@ -6,7 +6,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 function Screen1 () {
     const navigation : any= useNavigation()
     return (
-        <View style={{flex : 1,justifyContent : 'center',alignItems : 'center'}}>
+        <View style={{flex : 1,justifyContent : 'center',alignItems : 'center',backgroundColor : 'red'}}>
         <Text onPress={() => navigation.navigate("Screen2")}>Go to Screen2</Text>
         </View>
     )
@@ -15,7 +15,7 @@ function Screen1 () {
 function Screen2 () {
     const navigation : any= useNavigation()
     return (
-        <View style={{flex : 1,justifyContent : 'center',alignItems : 'center'}}>
+        <View style={{flex : 1,justifyContent : 'center',alignItems : 'center',backgroundColor : 'blue'}}>
         <Text onPress={() => navigation.navigate("Screen1")}>go to screen1</Text>
         </View>
     )
