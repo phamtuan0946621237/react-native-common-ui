@@ -1,5 +1,5 @@
 import React from "react"
-import { Text, View, TouchableOpacity, Image, useWindowDimensions } from "react-native"
+import { Text, View, TouchableOpacity, Image, useWindowDimensions, ScrollView } from "react-native"
 import { Header } from '../../../components/core'
 import { useNavigation } from "@react-navigation/native"
 import { createStyles } from './style'
@@ -30,6 +30,7 @@ export default () => {
                 }}
                 style={style.header}
             />
+            <ScrollView>
             <View style={{ marginHorizontal: 16, borderRadius: 16, width: (width - 32), height: 200, marginTop: 16 }}>
                 <Image source={{ uri: 'https://hinhgaixinh.com/wp-content/uploads/2021/03/hinh-gai-xinh-835x436.jpg' }}
                     // resizeMode="contain"
@@ -62,6 +63,7 @@ export default () => {
             <TouchableOpacity onPress={() => navigation.navigate("ListRepayment")} style={{ height: 48, backgroundColor: '#8E94F2', width: width - 32, justifyContent: 'center', flexDirection: 'row', marginHorizontal: 16, alignItems: 'center', borderRadius: 16, marginTop: 16 }}>
                 <Text style={{ color: 'white', fontSize: 16, lineHeight: 20, fontWeight: '600' }}>Trả nợ tiêu dùng</Text>
             </TouchableOpacity>
+            </ScrollView>
         </View>
     )
 }
