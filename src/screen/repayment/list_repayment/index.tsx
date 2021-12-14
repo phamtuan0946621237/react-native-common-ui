@@ -50,7 +50,7 @@ export default () => {
           })}
         </View>
         <Text style={{ fontSize: 16, fontWeight: 'bold', marginHorizontal: 16, marginTop: 32 }}>Danh sách TD (12)</Text>
-        {[1, 2, 3].map((item : any,index : number) => {
+        {[1,2,3].map((index : number) => {
           return (
             <View key={index} style={{ flexDirection: 'row', flex: 1, padding: 16, marginHorizontal: 16, backgroundColor: 'white', marginTop: 16, borderRadius: 16 }}>
               <Image source={{ uri: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFHtXJryG4rPY3zYTbflDjg6JlFaFgzr9AZA&usqp=CAU' }} style={{ width: 48, height: 48, resizeMode: 'cover', borderRadius: 24 }} />
