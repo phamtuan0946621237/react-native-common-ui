@@ -2,24 +2,9 @@ import React, { memo } from 'react'
 import { Text,View } from 'react-native'
 import { NavigationContainer, useNavigation } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+import InfoRepayment from '../screen/repayment/info_repayment'
+import ListRepayment from '../screen/repayment/list_repayment'
 
-function Screen1 () {
-    const navigation : any= useNavigation()
-    return (
-        <View style={{flex : 1,justifyContent : 'center',alignItems : 'center',backgroundColor : 'red'}}>
-        <Text onPress={() => navigation.navigate("Screen2")}>Go to Screen2</Text>
-        </View>
-    )
-}
-
-function Screen2 () {
-    const navigation : any= useNavigation()
-    return (
-        <View style={{flex : 1,justifyContent : 'center',alignItems : 'center',backgroundColor : 'blue'}}>
-        <Text onPress={() => navigation.navigate("Screen1")}>go to screen1</Text>
-        </View>
-    )
-}
 const Stack = createStackNavigator<any>();
 export default memo(() => {
     return (
@@ -29,10 +14,10 @@ export default memo(() => {
                     headerShown: false,
                 }}
                 initialRouteName={
-                    "Screen1"
+                    "InfoRepayment"
                 }>
-                <Stack.Screen name="Screen1" component={Screen1} options={{ title: 'Intro' }} />
-                <Stack.Screen name="Screen2" component={Screen2} options={{ title: 'Intro' }} />
+                <Stack.Screen name="InfoRepayment" component={InfoRepayment} options={{ title: 'InfoRepayment' }} />
+                <Stack.Screen name="ListRepayment" component={ListRepayment} options={{ title: 'ListRepayment' }} />
             </Stack.Navigator>
         </NavigationContainer>
     )
