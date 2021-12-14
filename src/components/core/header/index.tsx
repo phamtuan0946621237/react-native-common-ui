@@ -2,8 +2,8 @@
  * Created by duydatpham@gmail.com on Tue Oct 23 2018
  * Copyright (c) 2018 duydatpham@gmail.com
  */
-import React, { PureComponent } from 'react';
-import { StatusBar, Dimensions,View, Text, ViewStyle, TextStyle,TouchableOpacity,Platform } from 'react-native';
+import React from 'react';
+import { Dimensions, Platform, StatusBar, Text, TextStyle, TouchableOpacity, View, ViewStyle } from 'react-native';
 // import Icon from 'react-native-vector-icons/MaterialIcons';
 // import { HeaderSize } from '../../../util';
 const dimen = Dimensions.get('window');
@@ -30,7 +30,7 @@ export const HeaderSize = {
       ? isIphoneX()
         ? 94
         : 74
-      : 54 + StatusBar.currentHeight || 0,
+      : 54 + (StatusBar.currentHeight || 0),
   paddingTop:
     (isIphoneX() ? 40 : Platform.OS === 'ios' ? 20 : StatusBar.currentHeight) ||
     0,
