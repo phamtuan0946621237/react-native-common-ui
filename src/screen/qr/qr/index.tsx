@@ -1,11 +1,11 @@
-import { useNavigation } from "@react-navigation/native"
+// import { useNavigation } from "@react-navigation/native"
 import React, { useState, useCallback } from "react"
 import { Text, View ,TouchableOpacity,Image} from "react-native"
 import { Header } from '../../../components/core'
 import { createStyles } from './style'
 import {qr} from '../../../assets'
 export default () => {
-    const navigation: any = useNavigation()
+    // const navigation: any = useNavigation()
     const style = createStyles()
     const [indexTab, setIndexTab] = useState<number>(0)
     const _selectTab = useCallback((index: number) => {
