@@ -29,7 +29,7 @@ export default () => {
     },[])
 
     useEffect(() => {
-
+        console.log("helooo")
         fetch('https://staging-service-customer.fiin.vn/api/v1/user/info', {
           method: 'GET',
           headers: {
