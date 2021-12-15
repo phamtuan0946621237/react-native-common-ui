@@ -45,7 +45,9 @@ export default () => {
                     <Text style={{ fontSize: 16, fontWeight: 'bold', marginTop: 24, textAlign: 'center' }}>Dùng mã này để thanh toán</Text>
                     <Image source={qr} style={{ alignSelf: 'center', marginTop: 24 }} />
                 </View>
-                : <></>}
+                : <TouchableOpacity style={{flex : 1,justifyContent : 'center',alignItems : 'center'}} onPress={() => navigation.navigate("QRDetail")}>
+                        <Text>push to detail</Text>
+                    </TouchableOpacity>}
 
         </View>
     )
