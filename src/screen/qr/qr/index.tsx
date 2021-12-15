@@ -1,16 +1,19 @@
-// import { useNavigation } from "@react-navigation/native"
+import { useNavigation } from "@react-navigation/native"
 import React, { useState, useCallback } from "react"
-import { Text, View ,TouchableOpacity,Image} from "react-native"
+import { Text, View, TouchableOpacity, Image } from "react-native"
 import { Header } from '../../../components/core'
 import { createStyles } from './style'
-import {qr} from '../../../assets'
+import { qr, back_black_ic } from '../../../assets'
 export default () => {
-    // const navigation: any = useNavigation()
+    const navigation: any = useNavigation()
     const style = createStyles()
     const [indexTab, setIndexTab] = useState<number>(0)
     const _selectTab = useCallback((index: number) => {
         setIndexTab(index)
     }, [])
+
+    // const {} = useselec
+    // params.jwt
     return (
         <View style={{ flex: 1 }}>
             <Header
@@ -18,6 +21,13 @@ export default () => {
                     return <Text style={{ fontWeight: 'bold', lineHeight: 20, textAlign: 'center', fontSize: 16 }}>{"QR"}</Text>
                 }}
                 style={style.header}
+                renderLeft={() => {
+                    return (
+                        <TouchableOpacity style={{ padding: 16 }} onPress={navigation.goBack}>
+                            <Image source={back_black_ic} style={style.icon24} />
+                        </TouchableOpacity>
+                    );
+                }}
             />
 
             <View style={[{ backgroundColor: 'white', paddingVertical: 16, paddingHorizontal: 12, flexDirection: 'row', alignItems: 'center' }, style.header]}>

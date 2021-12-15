@@ -1,13 +1,16 @@
 import React, { useCallback } from "react"
 import { Text, View, TouchableOpacity, Image, useWindowDimensions, ScrollView } from "react-native"
 import { Header } from '../../../components/core'
-import { useNavigation } from "@react-navigation/native"
+import { useNavigation, useRoute } from "@react-navigation/native"
 import { createStyles } from './style'
 // import { back_black_ic } from '../../../assets'
 export default () => {
     const navigation : any= useNavigation()
     const style = createStyles()
     const { width } = useWindowDimensions()
+    const parrams = (useRoute() || {}).params as {token : string}
+
+    console.log("parrams_common_ui :::",parrams)
     const info = [
         { title: 'Tổng dư nợ', value: '128,000,000 VND' },
         { title: 'Dư nợ cần thanh toán', value: '500,000 VND' },
