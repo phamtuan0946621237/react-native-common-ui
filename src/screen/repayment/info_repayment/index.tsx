@@ -1,4 +1,4 @@
-import React, { useCallback } from "react"
+import React, { useCallback, useEffect } from "react"
 import { Text, View, TouchableOpacity, Image, useWindowDimensions, ScrollView } from "react-native"
 import { Header } from '../../../components/core'
 import { useNavigation, useRoute } from "@react-navigation/native"
@@ -27,6 +27,28 @@ export default () => {
             navigation.navigate("ListRepayment")
         }
     },[])
+
+    useEffect(() => {
+
+        fetch('https://staging-service-customer.fiin.vn/api/v1/user/info', {
+          method: 'GET',
+          headers: {
+            "Accept": 'application/json',
+            'Content-Type': 'application/json',
+            "platform-type": 'app',
+            'Authorization': `Bearer ${"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvc3RhZ2luZy1zZXJ2aWNlLWN1c3RvbWVyLmZpaW4udm5cL2FwaVwvYXV0aFwvbG9naW4iLCJpYXQiOjE2Mzk1NTIzODcsImV4cCI6MTY0MDE1NzE4NywibmJmIjoxNjM5NTUyMzg3LCJqdGkiOiJuWWhTS3Q3WVZYTHdmeGN4Iiwic3ViIjo1LCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIiwiZGV2aWNlX2lkIjoiNEE1OTYwRjgtQTNFMi00NjlFLTk0NjUtNzIwMTA5NTE0RTY4IiwicGxhdGZvcm1fdHlwZSI6ImFwcCIsInVzZXJfaWQiOjUsImNvZGUiOiJGaWluWF8wMDAwMDUiLCJwaG9uZSI6Iis4NDk3MzEzODA3MiIsIm5hbWUiOiJOZ3V5XHUxZWM1biB0aFx1MWVjYiBsXHUwMGZkIDcyIiwidHlwZSI6ImxvZ2luIn0.1eu8bIJBoPRHY8T6cy5PWn7qxkV8liX_R-7mOGl4pzQ"}`,
+            'device-id': "4A5960F8-A3E2-469E-9465-720109514E68"
+          },
+          mode: 'cors',
+        })
+          .then(function (response) {
+            return response.json();
+          })
+          .then(function (res) {
+            console.log("res :::",res)
+          });
+      }, [])
+      
     return (
         <View style={{ flex: 1 }}>
             <Header

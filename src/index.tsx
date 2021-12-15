@@ -1,5 +1,5 @@
 
-import Repayment from './naivgation/repayment'
+import Repayment from './naivgation/navigation'
 
 
 export {
