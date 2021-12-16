@@ -68,7 +68,7 @@ export default () => {
             <View style={{ marginHorizontal: 16, borderRadius: 16, width: (width - 32), height: 200, marginTop: 16 }}>
                 <Image source={backgroud}
                     // resizeMode="contain"
-                    style={{ width: (width - 32), height: 200, borderRadius: 16, backgroundColor: 'red', position: 'absolute', top: 0, left: 0, right: 0, bottom: 0 }}
+                    style={{ width: (width - 32), height: 200, borderRadius: 16, backgroundColor: 'white', position: 'absolute', top: 0, left: 0, right: 0, bottom: 0 }}
                 />
             </View>
 
