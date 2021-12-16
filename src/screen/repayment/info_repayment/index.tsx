@@ -3,7 +3,7 @@ import { Text, View, TouchableOpacity, Image, useWindowDimensions, ScrollView } 
 import { Header } from '../../../components/core'
 import { useNavigation, useRoute } from "@react-navigation/native"
 import { createStyles } from './style'
-// import { back_black_ic } from '../../../assets'
+import { backgroud } from '../../../assets'
 export default () => {
     const navigation : any= useNavigation()
     const style = createStyles()
@@ -66,7 +66,7 @@ export default () => {
             />
             <ScrollView>
             <View style={{ marginHorizontal: 16, borderRadius: 16, width: (width - 32), height: 200, marginTop: 16 }}>
-                <Image source={{ uri: 'https://hinhgaixinh.com/wp-content/uploads/2021/03/hinh-gai-xinh-835x436.jpg' }}
+                <Image source={backgroud}
                     // resizeMode="contain"
                     style={{ width: (width - 32), height: 200, borderRadius: 16, backgroundColor: 'red', position: 'absolute', top: 0, left: 0, right: 0, bottom: 0 }}
                 />
