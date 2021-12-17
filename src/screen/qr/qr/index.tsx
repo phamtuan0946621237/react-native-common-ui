@@ -1,9 +1,12 @@
 import { useNavigation } from "@react-navigation/native"
 import React, { useState, useCallback } from "react"
-import { Text, View, TouchableOpacity, Image } from "react-native"
+import { Text, View, TouchableOpacity, Image, Alert } from "react-native"
 import { Header } from '../../../components/core'
 import { createStyles } from './style'
 import { qr, back_black_ic } from '../../../assets'
+// import { RNCamera } from 'react-native-camera';
+import QRCodeScanner from 'react-native-qrcode-scanner';
+
 export default () => {
     const navigation: any = useNavigation()
     const style = createStyles()
@@ -12,8 +15,13 @@ export default () => {
         setIndexTab(index)
     }, [])
 
-    // const {} = useselec
-    // params.jwt
+    const onSuccess = (e: any) => {
+        console.log('eee :', e)
+        Alert.alert(
+            'Thông báo',
+            `${JSON.stringify(e)}`,
+        )
+    };
     return (
         <View style={{ flex: 1 }}>
             <Header
@@ -45,10 +53,13 @@ export default () => {
                     <Text style={{ fontSize: 16, fontWeight: 'bold', marginTop: 24, textAlign: 'center' }}>Dùng mã này để thanh toán</Text>
                     <Image source={qr} style={{ alignSelf: 'center', marginTop: 24 }} />
                 </View>
-                : <TouchableOpacity style={{flex : 1,justifyContent : 'center',alignItems : 'center'}} onPress={() => navigation.navigate("QRDetail")}>
-                        <Text>push to detail</Text>
-                    </TouchableOpacity>}
-
+                :
+                <QRCodeScanner
+                    onRead={onSuccess}
+                    reactivate={true}
+                    reactivateTimeout={8000}
+                />
+            }
         </View>
     )
 }
